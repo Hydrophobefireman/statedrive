@@ -1,4 +1,9 @@
-import { useState, useEffect, useCallback } from "@hydrophobefireman/ui-lib";
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "@hydrophobefireman/ui-lib";
 import { State, StateUpdater } from "./types";
 import { subscribe, unsubscribe } from "./subscribe";
 import { get, set } from "./state";
@@ -31,5 +36,5 @@ export function useSelector<T, U extends Array<State<T>>, R>(
     args.forEach((x) => subscribe(x, sub));
     return () => args.forEach((x) => unsubscribe(x, sub));
   }, args);
-  return func();
+  return useMemo(func, args);
 }
