@@ -1,6 +1,6 @@
 {
   "name": "statedrive",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/statedrive.modern.js",
   "module": "dist/statedrive.modern.js",
