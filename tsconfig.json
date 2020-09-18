@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "alwaysStrict": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "rootDir": "./",
+    "baseUrl": "."
+  }
+}
