@@ -50,5 +50,5 @@ export function useSharedStateValue<T>(s: State<T>): T {
 }
 
 export function useSetSharedState<T>(s: State<T>): SetSharedState<T> {
-  return useSetSharedState(s)[1];
+  return useSharedState(s)[1];
 }

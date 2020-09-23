@@ -1,6 +1,6 @@
 {
   "name": "statedrive",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/statedrive.modern.js",
   "module": "dist/statedrive.modern.js",
@@ -25,12 +25,12 @@
   "homepage": "https://github.com/Hydrophobefireman/statedrive#readme",
   "devDependencies": {
     "microbundle": "^0.12.3",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3"
   },
   "dependencies": {
     "@hydrophobefireman/j-utils": "^2.1.1"
   },
   "peerDependencies": {
-    "@hydrophobefireman/ui-lib": "^1.4.17"
+    "@hydrophobefireman/ui-lib": "^1.5.3"
   }
 }

@@ -16,3 +16,5 @@ export interface SelectorOptions<T> {
 }
 
 export type StateUpdater<T> = T | FunctionUpdater<T>;
+
+export {};
