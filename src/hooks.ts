@@ -20,7 +20,7 @@ export function useSharedState<T>(state: State<T>): [T, SetSharedState<T>] {
 
   return [
     value,
-    useCallback((nextValue: StateUpdater<T>) => set(state, nextValue)),
+    (nextValue: StateUpdater<T>) => set(state, nextValue),
   ];
 }
 
