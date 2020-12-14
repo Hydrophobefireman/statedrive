@@ -1,10 +1,6 @@
-import * as factory from "./_hook_factory";
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "@hydrophobefireman/ui-lib";
+import * as factory from "../../src/_hook_factory";
+
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useSharedState = /*#__PURE__*/ factory.createUseSharedState(
   useEffect,
