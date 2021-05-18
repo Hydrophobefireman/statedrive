@@ -7,14 +7,14 @@
   "scripts": {
     "build:no-minify": "microbundle src/index.ts --compress false -o ./dist -f modern --target web --raw true  --tsconfig tsconfig.json",
     "build:optimize": "microbundle src/index.ts -o ./dist -f modern --target web --raw true  --tsconfig tsconfig.json",
-    "build:react": "microbundle --cwd sd-react src/index.ts -o ../dist/react.js -f modern --target web --raw true  --tsconfig tsconfig.json",
+    "build:react": "microbundle --cwd react src/index.ts -o ../dist/react.js -f modern --target web --raw true  --tsconfig tsconfig.json",
     "prebuild": "rm -rf ./dist",
     "build": "npm run build:optimize && npm run build:react",
     "output": "npm run build:no-minify && npm run postbuild"
   },
   "exports": {
     ".": "./dist/statedrive.modern.js",
-    "./sd-react": "./dist/react.modern.js"
+    "./react": "./dist/react.modern.js"
   },
   "repository": {
     "type": "git",
@@ -28,14 +28,10 @@
   "sideEffects": false,
   "homepage": "https://github.com/Hydrophobefireman/statedrive#readme",
   "devDependencies": {
-    "microbundle": "^0.12.4",
-    "typescript": "^4.0.5"
-  },
-  "dependencies": {
-    "@hydrophobefireman/j-utils": "^2.1.6",
-    "@hydrophobefireman/ui-lib": "^1.7.0"
+    "microbundle": "^0.13.0",
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "@hydrophobefireman/ui-lib": "^1.5.5"
+    "@hydrophobefireman/ui-lib": "^1.9.5"
   }
 }

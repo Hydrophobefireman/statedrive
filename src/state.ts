@@ -1,9 +1,8 @@
 import { consumeUpdater } from "./util";
 import { StateOptions, State, StateUpdater } from "./types";
 import { notify } from "./subscribe";
-import { FakeWeakMap } from "@hydrophobefireman/j-utils";
 
-const valueMap = new FakeWeakMap<State<unknown>, unknown>();
+const valueMap = new WeakMap<State<unknown>, unknown>();
 
 export function createState<T>(options: StateOptions<T>): State<T> {
   const state = _state(options || {});

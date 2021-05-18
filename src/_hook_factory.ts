@@ -1,14 +1,12 @@
-import { State, StateUpdater, SelectorOptions, SetSharedState } from "./types";
-import { subscribe, unsubscribe } from "./subscribe";
-import { get, set } from "./state";
-import { FakeSet } from "@hydrophobefireman/j-utils";
-
+import { SelectorOptions, SetSharedState, State, StateUpdater } from "./types";
 import type {
-  useEffect as UseEffectType,
-  useState as UseStateType,
   useCallback as UseCallbackType,
+  useEffect as UseEffectType,
   useMemo as UseMemoType,
+  useState as UseStateType,
 } from "@hydrophobefireman/ui-lib";
+import { get, set } from "./state";
+import { subscribe, unsubscribe } from "./subscribe";
 
 namespace Hooks {
   export type useEffect = typeof UseEffectType;
@@ -41,7 +39,7 @@ export function createUseSelector(
   useCallback: Hooks.useCallback
 ) {
   return function useSelector<R>(func: (options: SelectorOptions<R>) => R): R {
-    const hasSubscribed = useMemo(() => new FakeSet<State<unknown>>(), []);
+    const hasSubscribed = useMemo(() => new Set<State<unknown>>(), []);
     const [, setState] = useState(null);
     const fn = useCallback(() => setState({}), []);
     const _get = useCallback(
@@ -54,10 +52,10 @@ export function createUseSelector(
       },
       [hasSubscribed]
     );
-    useEffect(() => () => hasSubscribed.forEach((x) => unsubscribe(x, fn)), [
-      hasSubscribed,
-      fn,
-    ]);
+    useEffect(
+      () => () => hasSubscribed.forEach((x) => unsubscribe(x, fn)),
+      [hasSubscribed, fn]
+    );
     return func({ get: _get });
   };
 }

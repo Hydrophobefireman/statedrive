@@ -2,17 +2,16 @@
   "name": "statedrive-react",
   "version": "1.0.0",
   "description": "",
-  "types": "../dist/sd-react/src/index.d.ts",
+  "types": "../dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@types/react": "^17.0.0"
+    "@types/react": "^17.0.5"
   },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "@hydrophobefireman/j-utils": "^2.1.6"
-  }
+    "react": "^17.0.2"
+  },
+  "author": "",
+  "license": "ISC"
 }
