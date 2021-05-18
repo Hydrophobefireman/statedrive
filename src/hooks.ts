@@ -1,4 +1,5 @@
 import * as factory from "./_hook_factory";
+
 import {
   useCallback,
   useEffect,
@@ -18,10 +19,8 @@ export const useSelector = /*#__PURE__*/ factory.createUseSelector(
   useCallback
 );
 
-export const useSharedStateValue = /*#__PURE__*/ factory.createUseSharedStateValue(
-  useSharedState
-);
+export const useSharedStateValue =
+  /*#__PURE__*/ factory.createUseSharedStateValue(useSharedState);
 
-export const useSetSharedState = /*#__PURE__*/ factory.createUseSetSharedState(
-  useSharedState
-);
+export const useSetSharedState =
+  /*#__PURE__*/ factory.createUseSetSharedState(useSharedState);
