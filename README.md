@@ -6,7 +6,7 @@ easy shared state across the entire app
 
 Each state is a unique atom to which you can attach event listeners and run state updates.
 
-# installation
+# Installation
 
 `npm i statedrive` or `yarn add statedrive`
 
@@ -20,7 +20,7 @@ import { createState } from "statedrive";
 
 ## For react
 
-```
+```js
 import {createState} from "statedrive/react"
 ```
 
@@ -28,7 +28,7 @@ everything else is the same.
 
 # Basic Usage
 
-1. create a state atom
+1. Create a state atom
    state.js
    ```js
    import { createState } from "statedrive";
@@ -48,7 +48,7 @@ everything else is the same.
      return <div>You Entered {name}</div>;
    }
    ```
-3. use it within your app elsewhere (any place where hooks don't work)
+3. Use it within your app elsewhere (any place where hooks don't work)
    util.js
    ```js
    import { get, set } from "statedrive";
