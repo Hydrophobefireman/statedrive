@@ -1,14 +1,15 @@
-import { SelectorOptions, SetSharedState, State, StateUpdater } from "./types";
 import type {
   useCallback as UseCallbackType,
   useEffect as UseEffectType,
   useMemo as UseMemoType,
   useState as UseStateType,
 } from "@hydrophobefireman/ui-lib";
-import { get, set } from "./state";
-import { subscribe, unsubscribe } from "./subscribe";
 
-namespace Hooks {
+import {get, set} from "./state";
+import {subscribe, unsubscribe} from "./subscribe";
+import {SelectorOptions, SetSharedState, State, StateUpdater} from "./types";
+
+export namespace Hooks {
   export type useEffect = typeof UseEffectType;
   export type useState = typeof UseStateType;
   export type useCallback = typeof UseCallbackType;
@@ -56,7 +57,7 @@ export function createUseSelector(
       () => () => hasSubscribed.forEach((x) => unsubscribe(x, fn)),
       [hasSubscribed, fn]
     );
-    return func({ get: _get });
+    return func({get: _get});
   };
 }
 
