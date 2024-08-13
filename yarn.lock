@@ -959,7 +959,7 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@hydrophobefireman/ui-lib@^2.0.0":
+"@hydrophobefireman/ui-lib@latest":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@hydrophobefireman/ui-lib/-/ui-lib-2.0.0.tgz"
   integrity sha512-tcTuqKp0QgDIgqb0xAWxYuhtVZ/zjS9FIJP4s5BFgxGw0xEWGEW1IF/d86DCXPyIBOD6s1BoHDtphgNFHAw7EQ==
@@ -2847,7 +2847,7 @@ randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
-react@^18.2.0:
+react@latest:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
