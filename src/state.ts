@@ -1,7 +1,6 @@
-import { State, StateOptions, StateUpdater } from "./types";
-
-import { consumeUpdater } from "./util";
 import { notify } from "./subscribe";
+import type { State, StateOptions, StateUpdater } from "./types";
+import { consumeUpdater } from "./util";
 
 const valueMap = new WeakMap<State<unknown>, unknown>();
 

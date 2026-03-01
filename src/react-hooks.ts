@@ -1,4 +1,4 @@
-import * as factory from "../../src/_hook_factory";
+import * as factory from "./_hook_factory";
 
 export function buildReactStatedrive(data: {
   useEffect: factory.Hooks.useEffect;
@@ -23,5 +23,5 @@ export function buildReactStatedrive(data: {
 
   const useSetSharedState =
     /*#__PURE__*/ factory.createUseSetSharedState(useSharedState);
-  return {useSharedState, useSelector, useSharedStateValue, useSetSharedState};
+  return { useSharedState, useSelector, useSharedStateValue, useSetSharedState };
 }

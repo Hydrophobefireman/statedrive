@@ -1,5 +1,3 @@
-import * as factory from "./_hook_factory";
-
 import {
   useCallback,
   useEffect,
@@ -7,16 +5,18 @@ import {
   useState,
 } from "@hydrophobefireman/ui-lib";
 
+import * as factory from "./_hook_factory";
+
 export const useSharedState = /*#__PURE__*/ factory.createUseSharedState(
   useEffect,
-  useState
+  useState,
 );
 
 export const useSelector = /*#__PURE__*/ factory.createUseSelector(
   useEffect,
   useState,
   useMemo,
-  useCallback
+  useCallback,
 );
 
 export const useSharedStateValue =

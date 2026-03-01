@@ -1,10 +1,21 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "alwaysStrict": true,
-    "declaration": true,
-    "moduleResolution": "Node",
     "target": "ESNext",
-    "baseUrl": "."
-  }
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

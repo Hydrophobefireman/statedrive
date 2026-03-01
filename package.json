@@ -1,26 +1,26 @@
 {
   "name": "statedrive",
-  "version": "0.1.1",
-  "description": "",
-  "main": "dist/statedrive.modern.js",
-  "module": "dist/statedrive.modern.js",
-  "scripts": {
-    "build:no-minify": "microbundle src/index.ts --compress false -o ./dist -f modern --target web --raw true  --tsconfig tsconfig.json",
-    "build:optimize": "microbundle src/index.ts -o ./dist -f modern --target web --raw true  --tsconfig tsconfig.json",
-    "build:react": "microbundle --cwd react src/index.ts -o ../dist/react.js -f modern --target web --raw true  --tsconfig tsconfig.json",
-    "prebuild": "rm -rf ./dist",
-    "build": "npm run build:optimize && npm run build:react",
-    "output": "npm run build:no-minify && npm run postbuild"
-  },
+  "version": "0.5.0",
+  "description": "Lightweight shared state management using atoms",
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/statedrive.modern.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./react": {
-      "import": "./dist/react.modern.js",
-      "types": "./dist/react/src/index.d.ts"
+      "types": "./dist/react-index.d.ts",
+      "default": "./dist/react-index.js"
     }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -30,15 +30,23 @@
   "bugs": {
     "url": "https://github.com/Hydrophobefireman/statedrive/issues"
   },
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
   "homepage": "https://github.com/Hydrophobefireman/statedrive#readme",
   "devDependencies": {
-    "microbundle": "^0.13.3",
-    "typescript": "^4.3.2"
+    "@hydrophobefireman/ui-lib": "^2.3.0",
+    "@types/react": "^19.0.0",
+    "tsdown": "^0.11.0",
+    "typescript": "^5.8.0"
   },
   "peerDependencies": {
-    "@hydrophobefireman/ui-lib": "latest",
-    "react": "latest"
+    "@hydrophobefireman/ui-lib": ">=0.1.0",
+    "react": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@hydrophobefireman/ui-lib": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
   }
 }

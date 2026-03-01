@@ -1,18 +1,18 @@
-import { State } from "./types";
+import type {State} from "./types";
 
 interface Listener<T> {
   (oldValue: T, newValue: T): void;
 }
-type ListenerMap<T> = WeakMap<State<T>, Set<Listener<T>>>;
-const listenerMap: ListenerMap<unknown> = new WeakMap();
+
+const listenerMap = new WeakMap<State<any>, Set<Listener<any>>>();
 
 export function notify<T>(state: State<T>, oldValue: T, newValue: T) {
-  const listeners = (listenerMap as ListenerMap<T>).get(state);
+  const listeners = listenerMap.get(state) as Set<Listener<T>> | undefined;
   if (listeners) listeners.forEach((fn) => fn(oldValue, newValue));
 }
 
 export function subscribe<T>(state: State<T>, callback: Listener<T>) {
-  let listeners = (listenerMap as ListenerMap<T>).get(state);
+  let listeners = listenerMap.get(state) as Set<Listener<T>> | undefined;
   if (listeners == null) {
     listeners = new Set();
     listenerMap.set(state, listeners);
@@ -21,6 +21,6 @@ export function subscribe<T>(state: State<T>, callback: Listener<T>) {
 }
 
 export function unsubscribe<T>(state: State<T>, callback: Listener<T>) {
-  const listeners = (listenerMap as ListenerMap<T>).get(state);
+  const listeners = listenerMap.get(state) as Set<Listener<T>> | undefined;
   if (listeners) listeners.delete(callback);
 }

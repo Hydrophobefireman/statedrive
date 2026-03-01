@@ -3,7 +3,7 @@ export interface StateOptions<T> {
   initialValue?: T;
 }
 export interface State<T> {
-  name: string | void;
+  name: string | undefined;
 }
 export interface FunctionUpdater<T> {
   (previous?: T): T;
@@ -16,5 +16,3 @@ export interface SelectorOptions<T> {
 }
 
 export type StateUpdater<T> = T | FunctionUpdater<T>;
-
-export {};
